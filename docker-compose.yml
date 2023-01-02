@@ -1,0 +1,32 @@
+version: '2'
+services:
+  db:
+    container_name: odoo16_db
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_DB=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    restart: always            
+    volumes:
+      - db-data:/var/lib/postgresql/data/pgdata 
+
+  web:
+    container_name: odoo16_web
+    image: odoo:16
+    depends_on:
+      - db
+    ports:
+      - "16005:8069"
+    tty: true
+    command: -- --dev=reload
+    volumes:
+      - ./addons:/mnt/extra-addons
+      - ./etc:/etc/odoo
+      - web-data:/var/lib/odoo
+    restart: always  
+    
+volumes:
+  db-data:
+  web-data:

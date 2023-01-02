@@ -31,5 +31,5 @@ $ docker-compose up  -d
 
 Then locate `localhost:16000` to access Odoo 16.0.
 
-<img width="500px" src="https://github.com/Sayed09/odoo-16-docker/blob/master/static/odoo-apps.png" alt="Odoo is working.">
+<img width="500px" src="https://github.com/Sayed09/odoo-16-docker/blob/main/screenshots/odoo-apps.png" alt="Odoo is working.">
 

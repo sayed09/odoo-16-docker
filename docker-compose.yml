@@ -23,13 +23,4 @@ services:
     volumes:
       - ./addons:/mnt/extra-addons
       - ./etc:/etc/odoo
-<<<<<<< HEAD
-    restart: always  
-=======
-      - web-data:/var/lib/odoo
-    restart: always  
-    
-volumes:
-  db-data:
-  web-data:
->>>>>>> 9f32aebbb96e9d85a586f6da2833eb9cd5444678
+    restart: always

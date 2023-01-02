@@ -7,10 +7,9 @@ services:
       - POSTGRES_USER=odoo
       - POSTGRES_PASSWORD=odoo
       - POSTGRES_DB=postgres
-      - PGDATA=/var/lib/postgresql/data/pgdata
     restart: always            
     volumes:
-      - db-data:/var/lib/postgresql/data/pgdata 
+      - ./postgresql:/var/lib/postgresql/data
 
   web:
     container_name: odoo16_web
@@ -24,9 +23,4 @@ services:
     volumes:
       - ./addons:/mnt/extra-addons
       - ./etc:/etc/odoo
-      - web-data:/var/lib/odoo
     restart: always  
-    
-volumes:
-  db-data:
-  web-data:
